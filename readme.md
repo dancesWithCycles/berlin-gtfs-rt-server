@@ -36,7 +36,7 @@ Refer to [`localaddress-agent`'s installation instructions](https://github.com/d
 ### Cloning
 
 ```shell
-git clone https://github.com/dancesWithCycles/fp-gtfs-rt-server.git
+git clone -b fp https://github.com/dancesWithCycles/fp-gtfs-rt-server.git
 cd fp-gtfs-rt-server
 npm install
 ```
