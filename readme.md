@@ -1,4 +1,4 @@
-# fp-gtfs-rt-server
+# WIP: fp-gtfs-rt-server
 
 **Poll the [Fahrplaner](https://fahrplaner.de) [WIP: HAFAS endpoint](https://github.com/public-transport/vbb-hafas) to provide a [GTFS Realtime (GTFS-RT)](https://gtfs.org/reference/realtime/v2/) feed for the Fahrplaner area.**
 
@@ -81,7 +81,7 @@ docker run -e BBOX -i -t --rm derhuerst/fp-gtfs-rt-server
 
 ### via docker-compose
 
-The example [`docker-compose.yml`](docker-compose.yml) starts up a complete set of containers (`berlin-gtfs-rt-server`, Redis, PostGIS/PostgreSQL, [NATS Streaming](https://nats-io.gitbook.io/legacy-nats-docs/nats-streaming-server-aka-stan)) to generate a GTFS-RT feed
+The example [`docker-compose.yml`](docker-compose.yml) starts up a complete set of containers (`fp-gtfs-rt-server`, Redis, PostGIS/PostgreSQL, [NATS Streaming](https://nats-io.gitbook.io/legacy-nats-docs/nats-streaming-server-aka-stan)) to generate a GTFS-RT feed
 
 Be sure to set `POSTGRES_PASSWORD`, either via a `.env` file or an environment variable.
 
