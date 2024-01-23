@@ -51,10 +51,10 @@ The build script will download [WIP: the latest VBB GTFS Static data](https://vb
 
 ### Running
 
-Specify the bounding box to be observed as JSON:
+Specify the bounding box to be observed as JSON (This [tool](https://boundingbox.klokantech.com/) might help with the bounding box.):
 
 ```shell
-export BBOX='{"north": 52.52, "west": 13.36, "south": 52.5, "east": 13.39}'
+export BBOX='{"north": 51.29, "west": 6.54, "south": 54.0, "east": 6.65}'
 ```
 
 `fp-gtfs-rt-server` uses `hafas-gtfs-rt-feed` underneath, which is split into three parts: polling the HAFAS endpoint (`monitor-hafas` CLI), matching realtime data (`match-with-gtf` CLI), and serving a GTFS-RT feed (`serve-as-gtfs-rt` CLI). You can run all three at once using the `start.sh` wrapper script:
@@ -67,12 +67,12 @@ In production, run all three using a tool that restarts them when they crash, e.
 
 ### via Docker
 
-A Docker image [is available as `derhuerst/fp-gtfs-rt-server`](https://hub.docker.com/r/derhuerst/fp-gtfs-rt-server).
+A Docker image [WIP: is available as `derhuerst/fp-gtfs-rt-server`](https://hub.docker.com/r/derhuerst/fp-gtfs-rt-server).
 
 *Note:* The Docker image *does not* contain Redis, PostgreSQL & NATS. You need to configure access to them using the environment variables documented above (e.g. `NATS_STREAMING_URL`).
 
 ```shell
-export BBOX='{"north": 52.52, "west": 13.36, "south": 52.5, "east": 13.39}'
+export BBOX='{"north": 51.29, "west": 6.54, "south": 54.0, "east": 6.65}'
 # build the matching index
 docker run -e BBOX -i -t --rm derhuerst/fp-gtfs-rt-server ./build.sh
 # run
