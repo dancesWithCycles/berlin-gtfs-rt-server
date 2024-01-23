@@ -36,8 +36,8 @@ Refer to [`localaddress-agent`'s installation instructions](https://github.com/d
 ### Cloning
 
 ```shell
-git clone https://github.com/derhuerst/berlin-gtfs-rt-server.git
-cd berlin-gtfs-rt-server
+git clone https://github.com/dancesWithCycles/fp-gtfs-rt-server.git
+cd fp-gtfs-rt-server
 npm install
 ```
 
@@ -47,7 +47,7 @@ npm install
 npm run build
 ```
 
-The build script will download [the latest VBB GTFS Static data](https://vbb-gtfs.jannisr.de/latest/) and import it into PostgreSQL. Then, it will add [additional lookup tables to match realtime data with GTFS Static data](https://github.com/derhuerst/match-gtfs-rt-to-gtfs). [`psql`](https://www.postgresql.org/docs/current/app-psql.html) will need to have access to your database.
+The build script will download [WIP: the latest VBB GTFS Static data](https://vbb-gtfs.jannisr.de/latest/) and import it into PostgreSQL. Then, it will add [additional lookup tables to match realtime data with GTFS Static data](https://github.com/derhuerst/match-gtfs-rt-to-gtfs). [`psql`](https://www.postgresql.org/docs/current/app-psql.html) will need to have access to your database.
 
 ### Running
 
@@ -57,7 +57,7 @@ Specify the bounding box to be observed as JSON:
 export BBOX='{"north": 52.52, "west": 13.36, "south": 52.5, "east": 13.39}'
 ```
 
-`berlin-gtfs-rt-server` uses `hafas-gtfs-rt-feed` underneath, which is split into three parts: polling the HAFAS endpoint (`monitor-hafas` CLI), matching realtime data (`match-with-gtf` CLI), and serving a GTFS-RT feed (`serve-as-gtfs-rt` CLI). You can run all three at once using the `start.sh` wrapper script:
+`fp-gtfs-rt-server` uses `hafas-gtfs-rt-feed` underneath, which is split into three parts: polling the HAFAS endpoint (`monitor-hafas` CLI), matching realtime data (`match-with-gtf` CLI), and serving a GTFS-RT feed (`serve-as-gtfs-rt` CLI). You can run all three at once using the `start.sh` wrapper script:
 
 ```shell
 ./start.sh
@@ -67,16 +67,16 @@ In production, run all three using a tool that restarts them when they crash, e.
 
 ### via Docker
 
-A Docker image [is available as `derhuerst/berlin-gtfs-rt-server`](https://hub.docker.com/r/derhuerst/berlin-gtfs-rt-server).
+A Docker image [is available as `derhuerst/fp-gtfs-rt-server`](https://hub.docker.com/r/derhuerst/fp-gtfs-rt-server).
 
 *Note:* The Docker image *does not* contain Redis, PostgreSQL & NATS. You need to configure access to them using the environment variables documented above (e.g. `NATS_STREAMING_URL`).
 
 ```shell
 export BBOX='{"north": 52.52, "west": 13.36, "south": 52.5, "east": 13.39}'
 # build the matching index
-docker run -e BBOX -i -t --rm derhuerst/berlin-gtfs-rt-server ./build.sh
+docker run -e BBOX -i -t --rm derhuerst/fp-gtfs-rt-server ./build.sh
 # run
-docker run -e BBOX -i -t --rm derhuerst/berlin-gtfs-rt-server
+docker run -e BBOX -i -t --rm derhuerst/fp-gtfs-rt-server
 ```
 
 ### via docker-compose
