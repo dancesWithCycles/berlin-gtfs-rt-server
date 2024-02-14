@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
-set -e
-set -o pipefail
+# https://www.howtogeek.com/782514/how-to-use-set-and-pipefail-in-bash-scripts-on-linux/
+#TODO" https://mywiki.wooledge.org/BashFAQ/105
+set -eo pipefail
 
+# $0: current shell or shell script file name
 lib="$(dirname $(realpath $0))/lib"
 
 # kill child processes on exit
