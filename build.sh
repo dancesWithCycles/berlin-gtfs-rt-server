@@ -21,10 +21,10 @@ NODE_ENV=production node_modules/.bin/gtfs-to-sql -d --trips-without-shape-id --
 	gtfs/stops.csv \
 	gtfs/transfers.csv \
 	gtfs/trips.csv \
-	| tee | psql -b
+	| sponge | psql -b
 	# gtfs/shapes.csv \
 
 lib="$(dirname $(realpath $0))/lib"
 NODE_ENV=production node_modules/.bin/build-gtfs-match-index \
 	$lib/hafas-info.js $lib/gtfs-info.js \
-	| tee | psql -b
+	| sponge | psql -b
