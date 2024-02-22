@@ -11,7 +11,7 @@ set -x
 
 env | grep '^PG' || true
 
-NODE_ENV=production node_modules/.bin/gtfs-to-sql -d --trips-without-shape-id --routes-without-agency-id -- \
+NODE_ENV=production node_modules/.bin/gtfs-to-sql -d --postgraphile --trips-without-shape-id --routes-without-agency-id -- \
 	gtfs/agency.csv \
 	gtfs/calendar.csv \
 	gtfs/calendar_dates.csv \
