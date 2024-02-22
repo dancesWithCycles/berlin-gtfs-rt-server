@@ -54,7 +54,7 @@ The build script will download [WIP: the latest VBB GTFS Static data](https://vb
 Specify the bounding box to be observed as JSON (This [tool](https://boundingbox.klokantech.com/) might help with the bounding box.):
 
 ```shell
-export BBOX='{"north": 51.29, "west": 6.54, "south": 54.0, "east": 6.65}'
+export BBOX='{"north": 51.29, "west": 6.35, "south": 54.27, "east": 12.93}'
 ```
 
 `fp-gtfs-rt-server` uses `hafas-gtfs-rt-feed` underneath, which is split into three parts: polling the HAFAS endpoint (`monitor-hafas` CLI), matching realtime data (`match-with-gtf` CLI), and serving a GTFS-RT feed (`serve-as-gtfs-rt` CLI). You can run all three at once using the `start.sh` wrapper script:
