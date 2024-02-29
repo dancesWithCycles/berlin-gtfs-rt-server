@@ -1,6 +1,6 @@
 # WIP: fp-gtfs-rt-server
 
-**Poll the [Fahrplaner](https://fahrplaner.de) [WIP: HAFAS endpoint](https://github.com/public-transport/vbb-hafas) to provide a [GTFS Realtime (GTFS-RT)](https://gtfs.org/reference/realtime/v2/) feed for the Fahrplaner area.**
+**Poll the [Fahrplaner](https://fahrplaner.de) [HAFAS endpoint](https://github.com/public-transport/vbb-hafas) to provide a [GTFS Realtime (GTFS-RT)](https://gtfs.org/reference/realtime/v2/) feed for the Fahrplaner area.**
 
 [![Prosperity/Apache license](https://img.shields.io/static/v1?label=license&message=Prosperity%2FApache&color=0997E8)](#license)
 [![support me via GitHub Sponsors](https://img.shields.io/badge/support%20me-donate-fa7664.svg)](https://github.com/sponsors/derhuerst)
