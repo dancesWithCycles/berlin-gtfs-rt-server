@@ -1,4 +1,4 @@
-# WIP: fp-gtfs-rt-server
+# fp-gtfs-rt-server
 
 **Poll the [Fahrplaner](https://fahrplaner.de) [HAFAS endpoint](https://github.com/public-transport/vbb-hafas) to provide a [GTFS Realtime (GTFS-RT)](https://gtfs.org/reference/realtime/v2/) feed for the Fahrplaner area.**
 
